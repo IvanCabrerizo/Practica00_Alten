@@ -20,6 +20,7 @@ fun main() {
         p1 = listOf("lagarto", "piedra", "lagarto", "spock"),
         p2 = listOf("papel", "spock", "piedra", "lagarto")
     )
+    tarea8()
 }
 
 /**
@@ -220,7 +221,8 @@ fun tarea6(word: String) {
 }
 
 /**
- * Funcion que transforma una cadena en su version espejo
+ * Funcion que analiza dos listas de jugadas de piedra, papel, tijera...
+ * y te da el ganador por ronda y luego la puntuacion final.
  *
  * @author Ivan Cabrerizo
  */
@@ -256,10 +258,34 @@ fun tarea7(p1: List<String>, p2: List<String>) {
             }
         }
     }
-    if(scoreP1 > scoreP2){
+    if (scoreP1 > scoreP2) {
         println("\nEl ganador es el jugador 1 con $scoreP1 puntos ")
-    }
-    else{
+    } else {
         println("\nEl ganador es el jugador 2 con $scoreP2 puntos ")
     }
+}
+
+/**
+ * Funcion que sustituye numeros por palabras segun un criterio
+ *
+ * @author Ivan Cabrerizo
+ */
+fun tarea8() {
+    for (i in 1..100) {
+        when {
+            i % 3 == 0 && i % 5 == 0 -> println("triplepremio")
+            i % 3 == 0 -> println("triple")
+            i % 5 == 0 -> println("premio")
+            else -> println(i)
+        }
+    }
+}
+
+/**
+ * Funcion que muestra el transcurso de un partido de tenis y quien gana
+ *
+ * @author Ivan Cabrerizo
+ */
+fun tarea9(playList: List<String>) {
+    println(playList.size)
 }
