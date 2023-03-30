@@ -126,9 +126,35 @@ fun main(){
         println("La cadena mas largas es: ${listString[posicion]}")
     }
 
+    /**
+     * Funcion que realiza la sucesion de fibonacci
+     *
+     * @author Ivan Cabrerizo
+     */
+    fun tarea4(num: Int){
+        var secuencia = mutableListOf<Int>(0, 1)
+
+        for (i in 0 until num){
+            val fibonacci = secuencia[i] + secuencia[i + 1]
+            secuencia.add(fibonacci)
+        }
+
+        println(secuencia)
+    }
+
+    /**
+     * Funcion que transforma la cadena recibida a lenguaje hacker
+     *
+     * @author Ivan Cabrerizo
+     */
+    fun tarea5(){
+
+    }
+
     tarea1(9229)
     tarea2Uno(10, 34, 5, 1, 20, 34)
     tarea2Dos(10, 34, 5, 1, 20, 34)
     tarea2Tres(10, 34, 5, 1, 2 ,34)
     tarea3("Paco", "Juan", "Pedro", "Supercalifragilisticoespialidoso")
+    tarea4(10)
 }
