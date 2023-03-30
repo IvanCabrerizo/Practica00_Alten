@@ -16,7 +16,10 @@ fun main() {
     tarea4(10)
     tarea5("Paco23.")
     tarea6("Ivan")
-    tarea7(p1 = listOf("Piedra", "Piedra", "Papel"), p2 = listOf("Papel", "Tijera", "Piedra"))
+    tarea7(
+        p1 = listOf("lagarto", "piedra", "lagarto", "spock"),
+        p2 = listOf("papel", "spock", "piedra", "lagarto")
+    )
 }
 
 /**
@@ -194,12 +197,13 @@ fun tarea5(encrypt: String) {
         "7" to "T",
         "8" to "B",
         "9" to "g",
-        "0" to "o")
+        "0" to "o"
+    )
 
     var wordEncrypted = ""
 
-    for(i in encrypt){
-        val translate  = hackerKey[i.lowercase()]
+    for (i in encrypt) {
+        val translate = hackerKey[i.lowercase()]
         wordEncrypted += translate ?: ""
     }
 
@@ -211,7 +215,7 @@ fun tarea5(encrypt: String) {
  *
  * @author Ivan Cabrerizo
  */
-fun tarea6(word: String){
+fun tarea6(word: String) {
     println("La palabra modificada seria: $word${word.dropLast(1).reversed()}")
 }
 
@@ -220,10 +224,42 @@ fun tarea6(word: String){
  *
  * @author Ivan Cabrerizo
  */
-fun tarea7(p1: List<String>, p2: List<String>){
-    for(i in p1.indices){
+fun tarea7(p1: List<String>, p2: List<String>) {
+    var scoreP1 = 0
+    var scoreP2 = 0
+    for (i in p1.indices) {
         when {
-            p1[i] == "Piedra" && p2[i] == "Papel" -> println("Hola")
+            p1[i] == p2[i] -> println("Ambos jugadores empataron")
+            p1[i] == "piedra" && (p2[i] == "tijera" || p2[i] == "lagarto") -> {
+                scoreP1++
+                println("Gana el jugador 1")
+            }
+            p1[i] == "papel" && (p2[i] == "piedra" || p2[i] == "spock") -> {
+                scoreP1++
+                println("Gana el jugador 1")
+            }
+            p1[i] == "tijera" && (p2[i] == "papel" || p2[i] == "lagarto") -> {
+                scoreP1++
+                println("Gana el jugador 1")
+            }
+            p1[i] == "lagarto" && (p2[i] == "papel" || p2[i] == "spock") -> {
+                scoreP1++
+                println("Gana el jugador 1")
+            }
+            p1[i] == "Spock" && (p2[i] == "piedra" || p2[i] == "tijera") -> {
+                scoreP1++
+                println("Gana el jugador 1")
+            }
+            else -> {
+                scoreP2++
+                println("Gana el jugador 2")
+            }
         }
+    }
+    if(scoreP1 > scoreP2){
+        println("\nEl ganador es el jugador 1 con $scoreP1 puntos ")
+    }
+    else{
+        println("\nEl ganador es el jugador 2 con $scoreP2 puntos ")
     }
 }
