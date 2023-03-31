@@ -21,6 +21,8 @@ fun main() {
         p2 = listOf("papel", "spock", "piedra", "lagarto")
     )
     tarea8()
+    tarea9(playList = listOf("P1", "P1", "P2", "P2", "P1", "P2", "P1", "P2", "P2", "P2", "P1"))
+    tarea10()
 }
 
 /**
@@ -287,5 +289,43 @@ fun tarea8() {
  * @author Ivan Cabrerizo
  */
 fun tarea9(playList: List<String>) {
-    println(playList.size)
+    val scoreList = mapOf(0 to "Love", 1 to "15", 2 to "30", 3 to "40")
+    var p1Score = 0
+    var p2Score = 0
+    var diferenciaP1 = 0
+    var diferenciaP2 = 0
+
+    for(i in playList){
+        when(i){
+            "P1" -> p1Score++
+            "P2" -> p2Score++
+        }
+
+        diferenciaP1 = p1Score - p2Score
+        diferenciaP2 = p2Score - p1Score
+
+        when{
+            p1Score < 3 || p2Score < 3 ->println("${scoreList[p1Score]} - ${scoreList[p2Score]}")
+            p1Score == 3 && p2Score == 3 -> println("Deuce")
+            p1Score >= 4 && diferenciaP1 == 1 -> println("Ventaja P1")
+            p2Score >= 4 && diferenciaP2 == 1 -> println("Ventaja P2")
+            p1Score >= 4 && diferenciaP1 == 2 -> {
+                println("Gana P1")
+                break
+            }
+            p2Score >= 4 && diferenciaP2 == 2 -> {
+                println("Gana P2")
+                break
+            }
+        }
+    }
+}
+
+/**
+ * Funcion que realiza un pequeño juego de mesa con cartas
+ *
+ * @author Ivan Cabrerizo
+ */
+fun tarea10(){
+
 }
