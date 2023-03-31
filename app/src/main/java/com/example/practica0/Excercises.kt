@@ -22,7 +22,7 @@ fun main() {
     )
     tarea8()
     tarea9(playList = listOf("P1", "P1", "P2", "P2", "P1", "P2", "P1", "P1"))
-    tarea10()
+    tarea10(20)
 }
 
 /**
@@ -322,10 +322,23 @@ fun tarea9(playList: List<String>) {
 }
 
 /**
- * Funcion que realiza un pequeño juego de mesa con cartas
+ * Funcion que realiza la puntuacion de un pequeño juego de mesa con cartas
  *
  * @author Ivan Cabrerizo
  */
-fun tarea10(){
+fun tarea10(p: Int){
+    val cards = mutableListOf<Int>()
 
+    for (actualNum in 1..p) {
+        val suma = cards.sum()
+
+        if (actualNum + actualNum < p - suma) {
+            cards.add(actualNum)
+        } else {
+            val a = p - suma
+            cards.add(a)
+            println(cards)
+            break
+        }
+    }
 }
