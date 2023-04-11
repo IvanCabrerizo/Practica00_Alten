@@ -175,9 +175,9 @@ fun tarea2Tres(num1: Int, num2: Int, num3: Int, num4: Int, num5: Int, num6: Int)
  * de una lista de cadenas.
  *
  * @param s1 Una cadena para realizar luego la lista de cadenas
- * @param s1 Una cadena para realizar luego la lista de cadenas
- * @param s1 Una cadena para realizar luego la lista de cadenas
- * @param s1 Una cadena para realizar luego la lista de cadenas
+ * @param s2 Una cadena para realizar luego la lista de cadenas
+ * @param s3 Una cadena para realizar luego la lista de cadenas
+ * @param s4 Una cadena para realizar luego la lista de cadenas
  *
  * @author Ivan Cabrerizo
  */
